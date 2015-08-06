@@ -22,7 +22,7 @@ public class OrchestratorOfGame {
 
     }
 
-    public String tellPlayerOneToMove() {
+    public String tellPlayerToMove() {
 
          printStream.println("Choose a number between 1 and 9 inclusive to determine where to place your symbol.");
         return null;

@@ -21,7 +21,7 @@ public class Main {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         OrchestratorOfGame orchestrator = new OrchestratorOfGame(System.out, bufferedReader, gameBoard);
         gameBoard.displayBoard();
-        String userInput = orchestrator.tellPlayerOneToMove();
+        String userInput = orchestrator.tellPlayerToMove();
         gameBoard.setPositionToSymbol(userInput, "x");
         gameBoard.displayBoard();
 

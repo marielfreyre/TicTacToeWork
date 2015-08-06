@@ -35,7 +35,7 @@ public class OrchestratorOfGameTest {
     @Test
     public void shouldPromptPlayer1ForMove() throws IOException {
 
-        orchestrator.tellPlayerOneToMove();
+        orchestrator.tellPlayerToMove();
         verify(printStream).println(contains("Choose"));
 
     }
