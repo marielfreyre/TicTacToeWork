@@ -8,12 +8,16 @@ import java.util.Scanner;
  * Created by mfreyre on 8/6/15.
  */
 public class OrchestratorOfGame {
+    private  Board board;
     private  PrintStream printStream;
     private  BufferedReader bufferedReader;
 
-    public OrchestratorOfGame(PrintStream printStream, BufferedReader bufferedReader) {
+
+    public OrchestratorOfGame(PrintStream printStream, BufferedReader bufferedReader, Board board) {
         this.printStream = printStream;
         this.bufferedReader = bufferedReader;
+        this.board = board;
+
 
 
     }
@@ -37,5 +41,19 @@ public class OrchestratorOfGame {
             printStream.println("Cannot implement user input");
         }
         return userInput;
+    }
+
+    public void recordPlayerOnesMove(String userInput) {
+        board.setPositionToSymbol(userInput, "X");
+
+
+
+    }
+
+    public void recordPlayerTwosMove(String userInput) {
+        board.setPositionToSymbol(userInput, "O");
+
+
+
     }
 }
