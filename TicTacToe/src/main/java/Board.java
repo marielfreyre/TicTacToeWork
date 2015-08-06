@@ -1,3 +1,4 @@
+import javax.swing.text.Position;
 import java.io.PrintStream;
 
 /*
@@ -8,19 +9,72 @@ import java.io.PrintStream;
  */
 public class Board {
     private final PrintStream printStream;
+    private Positions position1;
+    private Positions position2;
+    private Positions position3;
+    private Positions position4;
+    private Positions position5;
+    private Positions position6;
+    private Positions position7;
+    private Positions position8;
+    private Positions position9;
 
     public Board(PrintStream printStream) {
         this.printStream = printStream;
+        this.position1 = new Positions();
+        this.position2 = new Positions();
+        this.position3 = new Positions();
+        this.position4 = new Positions();
+        this.position5 = new Positions();
+        this.position6 = new Positions();
+        this.position7 = new Positions();
+        this.position8 = new Positions();
+        this.position9 = new Positions();
+
+
+
     }
 
 
-
     public void displayBoard() {
-        printStream.println("   |   |   ");
+        printStream.println(position1.toString() + "|" + position2.toString() + "|" + position2.toString());
         printStream.println(" ---------");
-        printStream.println("   |   |   ");
+        printStream.println(position4.toString() + "|" + position5.toString() + "|" + position6.toString());
         printStream.println(" ---------");
-        printStream.println("   |   |   ");
+        printStream.println(position7.toString() + "|" + position8.toString() + "|" + position9.toString());
+
+    }
+
+    public void setPositionToSymbol(String positionNum, String symbol) {
+        switch (positionNum) {
+            case "1":
+                position1.placeSymbol(symbol);
+                break;
+            case "2":
+                position2.placeSymbol(symbol);
+                break;
+            case "3":
+                position3.placeSymbol(symbol);
+                break;
+            case "4":
+                position4.placeSymbol(symbol);
+                break;
+            case "5":
+                position5.placeSymbol(symbol);
+                break;
+            case "6":
+                position6.placeSymbol(symbol);
+                break;
+            case "7":
+                position7.placeSymbol(symbol);
+                break;
+            case "8":
+                position8.placeSymbol(symbol);
+                break;
+            case "9":
+                position9.placeSymbol(symbol);
+                break;
+        }
 
     }
 }

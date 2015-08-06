@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="OrchestratorOfGameTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-08-06T18:58:35" hostname="mfreyre.local" time="0.118">
+<testsuite name="OrchestratorOfGameTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-08-06T20:09:27" hostname="mfreyre.local" time="0.0">
   <properties/>
-  <testcase name="shouldPromptPlayerForMove" classname="OrchestratorOfGameTest" time="0.118"/>
+  <testcase name="shouldPromptPlayerForMove" classname="OrchestratorOfGameTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

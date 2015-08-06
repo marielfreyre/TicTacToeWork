@@ -4,6 +4,7 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.*;
 import static org.mockito.Matchers.anyString;
+import static org.mockito.Matchers.contains;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -22,6 +23,16 @@ public class BoardTest {
 
         board.displayBoard();
         verify(printStream, times(5)).println(anyString());
+
+    }
+    @Test
+    public void shouldMarkPositionWithSymbol() {
+        PrintStream printStream = mock(PrintStream.class);
+        Board board = new Board(printStream);
+        String position = "1";
+        String symbol = "X";
+        board.setPositionToSymbol(position, symbol);
+        ;
 
     }
 
