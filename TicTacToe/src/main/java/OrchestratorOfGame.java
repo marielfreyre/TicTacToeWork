@@ -53,7 +53,5 @@ public class OrchestratorOfGame {
 
     }
     
-    public void messageUserWhenLocationIsTaken(){
-        
-    }
+
 }

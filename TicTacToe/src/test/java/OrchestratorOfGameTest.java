@@ -68,11 +68,5 @@ public class OrchestratorOfGameTest {
 
     }
 
-    @Test
-    public void shouldMessageUserWhenLocationIsTaken() throws Exception {
-        board.setPositionToSymbol("1", "X");
-        board.setPositionToSymbol("1", "Oogy Boogy");
-        verify(printStream).println(contains("taken"));
 
-    }
 }

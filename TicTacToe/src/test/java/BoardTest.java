@@ -7,6 +7,7 @@ import java.util.HashMap;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.mockito.Matchers.anyString;
+import static org.mockito.Matchers.contains;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -70,6 +71,13 @@ public class BoardTest {
         assertThat(positionMap.get("1"), is("  X  "));
 
 
+
+    }
+    @Test
+    public void shouldMessageUserWhenLocationIsTaken() throws Exception {
+        board.setPositionToSymbol("1", "X");
+        board.setPositionToSymbol("1", "Oogy Boogy");
+        verify(printStream).println(contains("taken"));
 
     }
 }

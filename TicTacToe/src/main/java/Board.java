@@ -58,8 +58,11 @@ public class Board {
     }
 
     public void setPositionToSymbol(String positionNum, String symbol) {
-        if(positionsMap.get(positionNum) == "    "){
-        positionsMap.put(positionNum, "  " + symbol + "  ");}
+        if (positionsMap.get(positionNum) == "    ") {
+            positionsMap.put(positionNum, "  " + symbol + "  ");
+        } else {
+            printStream.println("That location is taken!");
+        }
 
     }
 
