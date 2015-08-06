@@ -23,7 +23,7 @@ public class Board {
 //    private Positions position8;
 //    private Positions position9;
 
-    public Board(PrintStream printStream) {
+    public Board(PrintStream printStream, HashMap<String, String> positionMap) {
         this.printStream = printStream;
 //        this.position1 = new Positions();
 //        this.position2 = new Positions();
@@ -34,6 +34,7 @@ public class Board {
 //        this.position7 = new Positions();
 //        this.position8 = new Positions();
 //        this.position9 = new Positions();
+        this.positionsMap = positionMap;
         positionsMap.put("1", "    ");
         positionsMap.put("2", "    ");
         positionsMap.put("3", "    ");
@@ -57,7 +58,8 @@ public class Board {
     }
 
     public void setPositionToSymbol(String positionNum, String symbol) {
-        positionsMap.put(positionNum, "  " + symbol + "  ");
+        if(positionsMap.get(positionNum) == "    "){
+        positionsMap.put(positionNum, "  " + symbol + "  ");}
 
     }
 

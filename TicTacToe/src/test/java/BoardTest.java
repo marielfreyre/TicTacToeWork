@@ -1,10 +1,12 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.PrintStream;
+import java.util.HashMap;
 
-import static org.junit.Assert.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 import static org.mockito.Matchers.anyString;
-import static org.mockito.Matchers.contains;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -16,10 +18,33 @@ import static org.mockito.Mockito.verify;
  * @author mfreyre, @date 8/6/15 1:24 PM
  */
 public class BoardTest {
+    PrintStream printStream;
+    private Board board;
+    private HashMap<String,String> positionMap;
+
+    @Before
+    public void setUp() throws Exception {
+        printStream = mock(PrintStream.class);
+        positionMap = new HashMap<>();
+        positionMap.put("1", "    ");
+        positionMap.put("2", "    ");
+        positionMap.put("3", "    ");
+        positionMap.put("4", "    ");
+        positionMap.put("5", "    ");
+        positionMap.put("6", "    ");
+        positionMap.put("7", "    ");
+        positionMap.put("8", "    ");
+        positionMap.put("9", "    ");
+        board = new Board(printStream, positionMap);
+
+
+
+
+    }
+
     @Test
     public void shouldDisplayBoard() {
-        PrintStream printStream = mock(PrintStream.class);
-        Board board = new Board(printStream);
+
 
         board.displayBoard();
         verify(printStream, times(5)).println(anyString());
@@ -27,8 +52,7 @@ public class BoardTest {
     }
     @Test
     public void shouldMarkPositionWithSymbol() {
-        PrintStream printStream = mock(PrintStream.class);
-        Board board = new Board(printStream);
+
         String position = "1";
         String symbol = "X";
         board.setPositionToSymbol(position, symbol);
@@ -36,5 +60,16 @@ public class BoardTest {
 
     }
 
+    @Test
+    public void shouldNotOverridePreexistingSymbol() throws Exception {
 
+        String positionNum = "1";
+        String symbol = "X";
+        board.setPositionToSymbol(positionNum, symbol);
+        board.setPositionToSymbol("1", "Oogy boogy");
+        assertThat(positionMap.get("1"), is("  X  "));
+
+
+
+    }
 }
