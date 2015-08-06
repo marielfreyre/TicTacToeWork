@@ -5,6 +5,7 @@ import java.io.PrintStream;
 import static org.junit.Assert.*;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 /*
@@ -16,10 +17,12 @@ import static org.mockito.Mockito.verify;
 public class BoardTest {
     @Test
     public void shouldDisplayBoard() {
-        Board board = new Board();
         PrintStream printStream = mock(PrintStream.class);
-        verify(printStream).println(anyString());
-        
+        Board board = new Board(printStream);
+
+        board.displayBoard();
+        verify(printStream, times(5)).println(anyString());
+
     }
 
 
