@@ -7,6 +7,8 @@ public class Main {
         OrchestratorOfGame orchestrator = new OrchestratorOfGame(System.out);
         gameBoard.displayBoard();
         orchestrator.tellPlayerToMove();
+        gameBoard.setPositionToSymbol("1", "x");
+        gameBoard.displayBoard();
 
 
 
