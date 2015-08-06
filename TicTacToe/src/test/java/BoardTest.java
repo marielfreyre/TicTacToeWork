@@ -32,7 +32,7 @@ public class BoardTest {
         String position = "1";
         String symbol = "X";
         board.setPositionToSymbol(position, symbol);
-        ;
+
 
     }
 
