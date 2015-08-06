@@ -53,7 +53,5 @@ public class OrchestratorOfGame {
     public void recordPlayerTwosMove(String userInput) {
         board.setPositionToSymbol(userInput, "O");
 
-
-
     }
 }
