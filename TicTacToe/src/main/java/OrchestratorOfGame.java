@@ -28,9 +28,7 @@ public class OrchestratorOfGame {
         return null;
     }
 
-    public String tellPlayerTwoToMove() {
-        return null;
-    }
+    
 
     public String getPlayersMove() {
 
@@ -53,5 +51,9 @@ public class OrchestratorOfGame {
     public void recordPlayerTwosMove(String userInput) {
         board.setPositionToSymbol(userInput, "O");
 
+    }
+    
+    public void messageUserWhenLocationIsTaken(){
+        
     }
 }

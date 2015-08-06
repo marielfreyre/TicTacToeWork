@@ -35,10 +35,7 @@ public class OrchestratorOfGameTest {
     @Test
     public void shouldPromptPlayer1ForMove() throws IOException {
 
-
-
         orchestrator.tellPlayerOneToMove();
-
         verify(printStream).println(contains("Choose"));
 
     }
@@ -47,7 +44,6 @@ public class OrchestratorOfGameTest {
     public void shouldTakeInUserInput() throws Exception {
 
         when(bufferedReader.readLine()).thenReturn("1");
-
         assertThat(orchestrator.getPlayersMove(), is("1"));
 
     }
@@ -69,6 +65,14 @@ public class OrchestratorOfGameTest {
         orchestrator.recordPlayerTwosMove("1");
         verify(board).setPositionToSymbol("1", "O");
 
+
+    }
+
+    @Test
+    public void shouldMessageUserWhenLocationIsTaken() throws Exception {
+        board.setPositionToSymbol("1", "X");
+        board.setPositionToSymbol("1", "Oogy Boogy");
+        verify(printStream).println(contains("taken"));
 
     }
 }
