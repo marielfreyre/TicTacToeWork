@@ -4,7 +4,7 @@
  *
  * @author mfreyre, @date 8/6/15 1:24 PM
  */
-public class Library {
+public class Board {
     public boolean someLibraryMethod() {
         return true;
     }
