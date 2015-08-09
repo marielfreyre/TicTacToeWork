@@ -7,10 +7,8 @@ import java.io.PrintStream;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.mockito.Matchers.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Matchers.contains;
+import static org.mockito.Mockito.*;
 
 /**
  * Created by mfreyre on 8/6/15.
@@ -18,9 +16,8 @@ import static org.mockito.Mockito.when;
 public class OrchestratorOfGameTest {
     BufferedReader bufferedReader;
     PrintStream printStream;
-    private OrchestratorOfGame orchestrator;
     Board board;
-
+    private OrchestratorOfGame orchestrator;
 
     @Before
     public void setUp() throws Exception {
