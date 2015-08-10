@@ -3,14 +3,10 @@
  */
 public class Positions {
 
-    private String positionNumber;
     private String appearance = "    ";
-
 
     public void placeSymbol(String symbol) {
         appearance = "  " + symbol + "  ";
-
-
     }
 
     @Override

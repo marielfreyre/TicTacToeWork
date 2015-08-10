@@ -7,7 +7,22 @@ import java.util.HashMap;
  */
 public class Main {
     public static void main(String[] args) {
-        HashMap<String, String> positionMap = null;
+       HashMap positionMap = makeBoard();
+
+        Board gameBoard = new Board(System.out, positionMap);
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        Player orchestrator = new Player(System.out, bufferedReader, gameBoard);
+        gameBoard.displayBoard();
+        String userInput = orchestrator.tellPlayerToMove();
+        gameBoard.setPositionToSymbol(userInput, "x");
+        gameBoard.displayBoard();
+
+
+
+
+    }
+    public static HashMap makeBoard(){
+        HashMap<String, String> positionMap = new HashMap<>();
         positionMap.put("1", "    ");
         positionMap.put("2", "    ");
         positionMap.put("3", "    ");
@@ -17,16 +32,7 @@ public class Main {
         positionMap.put("7", "    ");
         positionMap.put("8", "    ");
         positionMap.put("9", "    ");
-        Board gameBoard = new Board(System.out, positionMap);
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        OrchestratorOfGame orchestrator = new OrchestratorOfGame(System.out, bufferedReader, gameBoard);
-        gameBoard.displayBoard();
-        String userInput = orchestrator.tellPlayerToMove();
-        gameBoard.setPositionToSymbol(userInput, "x");
-        gameBoard.displayBoard();
-
-
-
+        return positionMap;
 
     }
 }

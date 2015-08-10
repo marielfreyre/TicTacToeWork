@@ -17,7 +17,7 @@ public class OrchestratorOfGameTest {
     BufferedReader bufferedReader;
     PrintStream printStream;
     Board board;
-    private OrchestratorOfGame orchestrator;
+    private Player orchestrator;
 
     @Before
     public void setUp() throws Exception {
@@ -25,7 +25,7 @@ public class OrchestratorOfGameTest {
         board = mock(Board.class);
         printStream = mock(PrintStream.class);
         bufferedReader = mock(BufferedReader.class);
-        orchestrator = new OrchestratorOfGame(printStream, bufferedReader, board);
+        orchestrator = new Player(printStream, bufferedReader, board);
 
     }
 

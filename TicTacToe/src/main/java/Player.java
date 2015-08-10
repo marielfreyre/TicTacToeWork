@@ -5,13 +5,13 @@ import java.io.PrintStream;
 /**
  * Created by mfreyre on 8/6/15.
  */
-public class OrchestratorOfGame {
+public class Player {
     private Board board;
     private PrintStream printStream;
     private BufferedReader bufferedReader;
 
 
-    public OrchestratorOfGame(PrintStream printStream, BufferedReader bufferedReader, Board board) {
+    public Player(PrintStream printStream, BufferedReader bufferedReader, Board board) {
         this.printStream = printStream;
         this.bufferedReader = bufferedReader;
         this.board = board;
